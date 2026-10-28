@@ -150,6 +150,9 @@ h2 { font-size: clamp(2.3rem, 4.8vw, 3.8rem); margin-bottom: 1.4rem; text-wrap: 
 .table { margin-top: 2.6rem; padding: 1.6rem 0 0; border-top: 3px solid var(--gold-2); }
 .table p:first-child { font-family: var(--display); font-weight: 700; color: var(--gold); font-size: clamp(1.5rem, 2.4vw, 1.9rem); line-height: 1.15; }
 
+.freeband { background: radial-gradient(ellipse 70% 90% at 30% 50%, var(--smoke), var(--plum) 70%); }
+.freeband .grid { display: grid; grid-template-columns: minmax(0, 14rem) minmax(0, 36rem); gap: clamp(2rem, 5vw, 4.5rem); align-items: center; }
+.freeband img { box-shadow: 0 1.2rem 2.4rem rgba(0, 0, 0, .55); transform: rotate(-2deg); }
 footer { padding: 2.2rem 0 2.6rem; background: #0a060c; color: var(--page-2); font-size: 1.02rem; }
 footer .wrap { display: flex; flex-wrap: wrap; gap: .8rem 2rem; justify-content: space-between; }
 footer p { margin: 0; }
@@ -171,6 +174,8 @@ footer p { margin: 0; }
   .shelf li { border-bottom: 3px solid var(--gold-2); padding-bottom: 0; }
   .lab img { max-width: 15rem; }
   .more .one { grid-template-columns: 6.5rem minmax(0, 1fr); }
+  .freeband .grid { grid-template-columns: minmax(0, 1fr); }
+  .freeband img { max-width: 11rem; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 </style>
@@ -253,7 +258,6 @@ footer p { margin: 0; }
       <li><b>Grimoires and Green Tea</b><span>What do you do with a grumpy grimoire?</span></li>
       <li><b>Solstice &amp; Silver Spray</b><span>It’s a tough job running a magical bookshop, but someone’s got to do it.</span></li>
     </ul>
-    <p class="free">Start with Divination and Disaster: it’s free when you join my newsletter. <a class="quiet" href="https://www.melissagunn.com/">Sign up on my site</a></p>
 
     <div class="dryads">
       <div>
@@ -329,6 +333,20 @@ footer p { margin: 0; }
       <div class="table">
         <p>Find me at a con</p>
         <p>This October I had a table at Armageddon in Auckland, with the Woodside books, Weather Gods and the rest. Next time, come and say hi.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band freeband" id="free">
+  <div class="wrap grid">
+    <img src="img/divination.jpg" alt="Divination and Disaster, a Woodside cosy urban fantasy novelette" width="420" height="630" loading="lazy">
+    <div>
+      <h2>Start Woodside for free</h2>
+      <p class="lead-in">When divination fails, will disaster automatically follow? Divination and Disaster is the first story of Sibyl’s, and it’s yours free when you join my newsletter.</p>
+      <p>Flash Flood, the Weather Gods prequel, is free there too.</p>
+      <div class="buy">
+        <a class="btn" href="https://www.melissagunn.com/"><span class="spark"><svg><use href="#spark"/></svg></span>Get the free stories</a>
       </div>
     </div>
   </div>
