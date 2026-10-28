@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="en-NZ">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Melissa Gunn | Grimoires &amp; Green Tea</title>
+<meta name="description" content="Grimoires &amp; Green Tea, a Woodside cosy urban fantasy by Melissa Gunn, winner of the Sir Julius Vogel Award for Best Novella 2026.">
+<meta property="og:title" content="A homepage for Melissa Gunn, made by Sparsh Saini">
+<meta property="og:description" content="A homepage idea for Melissa Gunn and the Woodside books, made by Sparsh Saini. Not the official site.">
+<meta property="og:image" content="https://sparshsainied-prog.github.io/melissagunn/img/og.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23140c17'/><path d='M16 3C17 12 20 15 29 16 20 17 17 20 16 29 15 20 12 17 3 16 12 15 15 12 16 3Z' fill='%23e2c27d'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js')</script>
+<style>
+/* Colours from the Grimoires cover: the dark of the shelves, the gold of the title,
+   the purple smoke round Sibyl, the pink glow off her notebook. */
+:root {
+  --night: #120b14;
+  --plum: #1e1322;
+  --smoke: #3a2346;
+  --violet: #8a62c4;
+  --gold: #e2c27d;
+  --gold-2: #b58a45;
+  --page: #efe6d6;
+  --page-2: #c9bcae;
+  --display: "Cinzel Decorative", "Trajan Pro", Georgia, serif;
+  --text: "EB Garamond", Garamond, Georgia, serif;
+  --gutter: clamp(1rem, 5vw, 4rem);
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--night); color: var(--page); font-family: var(--text); font-size: 1.22rem; line-height: 1.55; overflow-x: hidden; }
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; }
+.wrap { max-width: 70rem; margin: 0 auto; padding: 0 var(--gutter); }
+h1, h2, h3 { font-family: var(--display); font-weight: 700; margin: 0; line-height: 1.05; color: var(--gold); }
+p { margin: 0 0 1rem; }
+:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+.spark { display: inline-block; width: .8em; height: .8em; vertical-align: -.05em; color: var(--gold); }
+.spark svg { width: 100%; height: 100%; display: block; }
+
+/* Buttons in the cover's hand: a thin gold rule round small engraved capitals */
+.btn { display: inline-flex; align-items: center; gap: .55rem; padding: .62rem 1.15rem .58rem; border: 1px solid var(--gold); color: var(--gold); text-decoration: none; font-family: var(--display); font-weight: 700; font-size: .98rem; letter-spacing: .02em; background: rgba(18, 11, 20, .55); }
+.btn:hover, .btn:focus-visible { background: var(--gold); color: var(--night); }
+.btn:hover .spark, .btn:focus-visible .spark { color: var(--night); }
+.quiet { font-style: italic; text-underline-offset: .25em; text-decoration-thickness: 1px; }
+.quiet:hover, .quiet:focus-visible { color: var(--gold); }
+.buy { display: flex; flex-wrap: wrap; gap: .8rem 1.4rem; align-items: center; }
+
+.top { position: absolute; z-index: 20; top: 0; left: 0; right: 0; }
+.made { margin: 0; padding: .45rem var(--gutter); background: #0a060c; color: var(--page-2); font-size: .98rem; line-height: 1.35; text-align: center; }
+.bar { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: .8rem var(--gutter); }
+.mark { font-family: var(--display); font-size: 1.35rem; font-weight: 700; text-decoration: none; color: var(--gold); }
+.bar nav { display: flex; gap: 1.4rem; font-size: 1.12rem; }
+.bar nav a { text-decoration: none; }
+.bar nav a:hover, .bar nav a:focus-visible { color: var(--gold); }
+
+/* Hero: we start inside the cover, on the grumpy grimoire in Sibyl's hands, and scrolling
+   pulls back until the whole book is sitting on the page. One image, transform only. */
+.hero { position: relative; height: 100svh; min-height: 40rem; }
+.js .hero { height: 330svh; }
+.stage { position: sticky; top: 0; height: 100svh; min-height: 40rem; overflow: hidden; background: var(--night) url(img/shelves-blur.jpg) center / cover no-repeat; }
+.stage::after { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(18, 11, 20, .2), rgba(18, 11, 20, .85)); pointer-events: none; }
+.big { position: absolute; z-index: 2; left: 0; top: 0; transform-origin: 0 0; will-change: transform; box-shadow: 0 1.6rem 3.4rem rgba(5, 2, 7, .7); overflow: hidden; }
+/* The cover in four planes, cut from the cover itself: the shop, Sibyl and the wolf, the gold title, the award seal */
+.pl { position: absolute; max-width: none; will-change: transform, opacity; }
+.plate { left: 0; top: 0; width: 100%; height: 100%; }
+.sibyl { left: 0; top: 36.016%; width: 92.196%; height: 63.984%; transform-origin: 48% 100%; }
+.title { left: 0; top: 6.523%; width: 98.551%; height: 26.289%; }
+.seal { left: 4.682%; top: 37.656%; width: 37.904%; height: 26.563%; }
+.low { position: absolute; z-index: 3; inset: 0; background: linear-gradient(rgba(18, 11, 20, .55), transparent 26%, transparent 42%, rgba(18, 11, 20, .92) 82%); pointer-events: none; will-change: opacity; }
+.open { position: absolute; z-index: 4; left: var(--gutter); right: var(--gutter); bottom: 9svh; max-width: 44rem; will-change: transform, opacity; }
+.open p { margin: 0; }
+.open .line { font-family: var(--display); font-weight: 700; font-size: clamp(2.3rem, 5.6vw, 4.6rem); line-height: 1.04; color: var(--gold); text-wrap: balance; text-shadow: 0 2px 22px rgba(10, 6, 12, .9); }
+.open .from { margin-top: .9rem; font-style: italic; color: var(--page); font-size: 1.2rem; text-shadow: 0 1px 10px rgba(10, 6, 12, .9); }
+
+.inside { position: absolute; z-index: 1; inset: 7rem var(--gutter) 2.5rem; display: grid; grid-template-columns: auto minmax(0, 31rem); justify-content: center; align-items: center; gap: clamp(2rem, 5vw, 4.5rem); }
+.slot { height: min(64svh, 36rem); aspect-ratio: 1794 / 2560; }
+.copy { position: relative; z-index: 5; will-change: transform, opacity; }
+.js .copy { opacity: 0; }
+html:not(.js) .open, html:not(.js) .low { display: none; }
+html:not(.js) .big { display: none; }
+.js .title, .js .seal { opacity: 0; }
+html:not(.js) .slot { background: url(img/grimoires.jpg) center / cover; }
+.still .hero { height: 100svh; }
+.still .open, .still .low { display: none; }
+.still .copy { opacity: 1; }
+.copy h1 { font-size: clamp(2.6rem, 4.6vw, 4.2rem); }
+.copy .tag { font-size: clamp(1.3rem, 2vw, 1.55rem); margin: .9rem 0 .3rem; color: var(--page); }
+.copy .meta { color: var(--page-2); font-style: italic; font-size: 1.12rem; margin-bottom: 1.5rem; }
+
+/* Calm sections */
+.band { padding: clamp(4.5rem, 10vw, 8rem) 0; }
+h2 { font-size: clamp(2.3rem, 4.8vw, 3.8rem); margin-bottom: 1.4rem; text-wrap: balance; }
+.lead-in { font-size: clamp(1.35rem, 2.2vw, 1.6rem); line-height: 1.42; max-width: 40rem; }
+
+.book { background: var(--plum); }
+.book .grid { display: grid; grid-template-columns: minmax(0, .7fr) minmax(0, 1.3fr); gap: clamp(2.5rem, 6vw, 6rem); align-items: start; }
+.book .cover-s { box-shadow: 0 1.5rem 3rem rgba(4, 2, 6, .6); position: sticky; top: 2rem; }
+.blurb { max-width: 38rem; }
+.blurb .ask { font-family: var(--display); font-size: clamp(1.6rem, 2.6vw, 2.1rem); line-height: 1.15; color: var(--gold); margin: 0 0 1.4rem; }
+.where { list-style: none; padding: 0; margin: 1.8rem 0 0; border-top: 1px solid rgba(226, 194, 125, .35); }
+.where li { border-bottom: 1px solid rgba(226, 194, 125, .35); }
+.where a { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; padding: .95rem 0; text-decoration: none; font-weight: 600; }
+.where a span { color: var(--page-2); font-weight: 400; font-style: italic; text-align: right; }
+.where a:hover, .where a:focus-visible { color: var(--gold); }
+
+/* Woodside: the books stood on one shelf, in reading order */
+.woodside { background: var(--night); }
+.shelf { list-style: none; margin: 3rem 0 0; padding: 0 0 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0 clamp(1rem, 3vw, 2.4rem); align-items: end; border-bottom: 3px solid var(--gold-2); box-shadow: 0 10px 0 -7px rgba(226, 194, 125, .25); }
+.shelf li { padding-bottom: 0; }
+.shelf a { display: block; text-decoration: none; }
+.shelf img { box-shadow: 0 .8rem 1.6rem rgba(0, 0, 0, .55); }
+.lines { list-style: none; margin: 1.4rem 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem clamp(1rem, 3vw, 2.4rem); }
+.lines b { display: block; font-weight: 600; color: var(--gold); font-size: 1.12rem; line-height: 1.25; margin-bottom: .3rem; }
+.lines span { display: block; font-style: italic; color: var(--page-2); font-size: 1.08rem; line-height: 1.35; }
+.free { margin-top: 2.6rem; max-width: 42rem; }
+.dryads { margin-top: clamp(3.5rem, 7vw, 5.5rem); display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); gap: clamp(2rem, 5vw, 4.5rem); align-items: center; }
+.dryads h3 { font-size: clamp(1.7rem, 2.8vw, 2.3rem); margin-bottom: 1rem; }
+.pair { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.pair img { box-shadow: 0 .8rem 1.6rem rgba(0, 0, 0, .55); }
+
+/* Weather Gods: a different sky, so a different band */
+.weather { background: linear-gradient(#18203a, #23173a); }
+.weather .grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(2.5rem, 6vw, 5rem); align-items: start; }
+.row3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .9rem; }
+.row3 img { box-shadow: 0 .8rem 1.6rem rgba(0, 0, 0, .5); }
+.order { list-style: none; padding: 0; margin: 1.6rem 0 0; counter-reset: n; }
+.order li { padding: .55rem 0; border-bottom: 1px solid rgba(239, 230, 214, .2); }
+.order a { text-decoration: none; font-weight: 600; }
+.order a:hover, .order a:focus-visible { color: var(--gold); }
+.order span { color: var(--page-2); font-style: italic; }
+
+.more { background: var(--plum); }
+.more .grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(2.5rem, 6vw, 5rem); }
+.more .one { display: grid; grid-template-columns: 8.5rem minmax(0, 1fr); gap: 1.4rem; align-items: start; }
+.more h3 { font-size: 1.55rem; margin-bottom: .7rem; }
+
+/* Science. Nature. Magic. */
+.lab { background: var(--night); }
+.lab .grid { display: grid; grid-template-columns: minmax(0, 17rem) minmax(0, 38rem); gap: clamp(2rem, 6vw, 5rem); align-items: start; }
+.lab img { box-shadow: 0 1.2rem 2.6rem rgba(0, 0, 0, .45); }
+.notes { list-style: none; padding: 0; margin: 2rem 0 0; }
+.notes li { display: grid; grid-template-columns: 1.4rem minmax(0, 1fr); gap: .7rem; padding: .7rem 0; border-top: 1px solid rgba(226, 194, 125, .25); }
+.notes .spark { margin-top: .35rem; width: .9rem; height: .9rem; }
+.table { margin-top: 2.6rem; padding: 1.6rem 0 0; border-top: 3px solid var(--gold-2); }
+.table p:first-child { font-family: var(--display); font-weight: 700; color: var(--gold); font-size: clamp(1.5rem, 2.4vw, 1.9rem); line-height: 1.15; }
+
+footer { padding: 2.2rem 0 2.6rem; background: #0a060c; color: var(--page-2); font-size: 1.02rem; }
+footer .wrap { display: flex; flex-wrap: wrap; gap: .8rem 2rem; justify-content: space-between; }
+footer p { margin: 0; }
+
+@media (max-width: 760px) {
+  body { font-size: 1.14rem; }
+  .bar nav { gap: 1rem; font-size: 1.05rem; }
+  .bar nav .wide { display: none; }
+  .open { bottom: 7svh; }
+  .inside { inset: 6.8rem 1.2rem 1.6rem; grid-template-columns: minmax(0, 1fr); grid-template-rows: auto auto; justify-items: center; align-content: center; gap: 1.3rem; text-align: center; }
+  .slot { height: min(40svh, 21rem); }
+  .copy h1 { font-size: 2.15rem; }
+  .copy .tag { font-size: 1.15rem; margin: .5rem 0 .2rem; }
+  .copy .meta { font-size: 1.02rem; margin-bottom: 1rem; }
+  .copy .buy { justify-content: center; }
+  .book .grid, .weather .grid, .more .grid, .lab .grid, .dryads { grid-template-columns: minmax(0, 1fr); }
+  .book .cover-s { position: static; max-width: 15rem; }
+  .shelf, .lines { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .shelf { border-bottom: 0; box-shadow: none; row-gap: 1.4rem; }
+  .shelf li { border-bottom: 3px solid var(--gold-2); padding-bottom: 0; }
+  .lab img { max-width: 15rem; }
+  .more .one { grid-template-columns: 6.5rem minmax(0, 1fr); }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="spark" viewBox="0 0 32 32"><path d="M16 1C17.2 11.5 20.5 14.8 31 16 20.5 17.2 17.2 20.5 16 31 14.8 20.5 11.5 17.2 1 16 11.5 14.8 14.8 11.5 16 1Z" fill="currentColor"/></symbol>
+</svg>
+<div class="top">
+  <p class="made">A homepage idea made by Sparsh Saini for Melissa Gunn. Not their official site.</p>
+  <div class="bar">
+    <a class="mark" href="#">Melissa Gunn</a>
+    <nav aria-label="Main">
+      <a href="#woodside">Woodside</a>
+      <a class="wide" href="#weather">Weather Gods</a>
+      <a href="#lab">About</a>
+    </nav>
+  </div>
+</div>
+
+<main>
+<section class="hero" aria-label="Grimoires and Green Tea">
+  <div class="stage">
+    <div class="inside">
+      <div class="slot" aria-hidden="true"></div>
+      <div class="copy">
+        <h1>Grimoires &amp; Green Tea</h1>
+        <p class="tag">Winner of the Sir Julius Vogel Award for Best Novella 2026</p>
+        <p class="meta">A Woodside cosy urban fantasy, set in a magical Aotearoa</p>
+        <div class="buy">
+          <a class="btn" href="https://books2read.com/GrimoiresAndGreenTea"><span class="spark"><svg><use href="#spark"/></svg></span>Find a copy</a>
+          <a class="quiet" href="https://melissagunnauthor-shop.fourthwall.com/products/grimoires-and-green-tea-audiobook">Hear me read it</a>
+        </div>
+      </div>
+    </div>
+    <div class="big" role="img" aria-label="Grimoires and Green Tea cover: Sibyl in a bookshop with a notebook and pencil, a grey wolf beside her, purple smoke, and the Sir Julius Vogel Award winner seal">
+      <img class="pl plate" src="img/p-plate.jpg" alt="" width="1794" height="2560" fetchpriority="high">
+      <img class="pl title" src="img/p-title.webp" alt="" width="1768" height="673">
+      <img class="pl sibyl" src="img/p-sibyl.webp" alt="" width="1654" height="1638">
+      <img class="pl seal" src="img/p-seal.webp" alt="" width="680" height="680">
+    </div>
+    <div class="low"></div>
+    <div class="open">
+      <p class="line">What do you do with a grumpy grimoire?</p>
+      <p class="from">Grimoires &amp; Green Tea, a Woodside cosy urban fantasy</p>
+    </div>
+  </div>
+</section>
+
+<section class="band book" id="book">
+  <div class="wrap grid">
+    <img class="cover-s" src="img/grimoires.jpg" alt="Grimoires and Green Tea by Melissa Gunn" width="600" height="856" loading="lazy">
+    <div class="blurb">
+      <h2>A bookshop, and a vampire at the door</h2>
+      <p class="ask">What do you do with a grumpy grimoire?</p>
+      <p>When Sibyl unexpectedly acquires a magical bookshop, she’s torn between exhilaration and panic.</p>
+      <p>She’s landed on her feet on her first venture away from home, as the bookshop comes complete with an apartment above it. But as her would-be customers press her for an opening date, she has to juggle cataloguing the books and trying to keep her new apartment rodent-free, not to mention settling the unruly grimoire her benefactors left her. Plus, there’s a vampire intent on gaining entry.</p>
+      <p>With no experience in retail and a grumpy grimoire to keep in check, will she ever succeed in running a bookshop?</p>
+      <ul class="where">
+        <li><a href="https://books2read.com/GrimoiresAndGreenTea">Ebook and paperback <span>your favourite store</span></a></li>
+        <li><a href="https://melissagunnauthor-shop.fourthwall.com/products/grimoires-and-green-tea-audiobook">Audiobook <span>straight from me, read by me</span></a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="band woodside" id="woodside">
+  <div class="wrap">
+    <h2>The Woodside shelf</h2>
+    <p class="lead-in">Life’s not as predictable as it should be when you’re born into a family of Seers, but can’t See yourself. Sibyl’s books, in reading order.</p>
+    <ul class="shelf">
+      <li><a href="https://www.melissagunn.com/"><img src="img/divination.jpg" alt="Divination and Disaster" width="420" height="630" loading="lazy"></a></li>
+      <li><a href="https://melissagunnauthor-shop.fourthwall.com/products/seers-and-salt"><img src="img/seers.jpg" alt="Seers and Salt" width="420" height="630" loading="lazy"></a></li>
+      <li><a href="https://books2read.com/GrimoiresAndGreenTea"><img src="img/grimoires.jpg" alt="Grimoires and Green Tea" width="600" height="856" loading="lazy"></a></li>
+      <li><a href="https://melissagunnauthor-shop.fourthwall.com/products/solstice-and-silver-spray-ebook"><img src="img/solstice.jpg" alt="Solstice and Silver Spray" width="420" height="600" loading="lazy"></a></li>
+    </ul>
+    <ul class="lines">
+      <li><b>Divination and Disaster</b><span>When divination fails, will disaster automatically follow?</span></li>
+      <li><b>Seers and Salt</b><span>It’s hard to do the unexpected when you come from a family of seers.</span></li>
+      <li><b>Grimoires and Green Tea</b><span>What do you do with a grumpy grimoire?</span></li>
+      <li><b>Solstice &amp; Silver Spray</b><span>It’s a tough job running a magical bookshop, but someone’s got to do it.</span></li>
+    </ul>
+    <p class="free">Start with Divination and Disaster: it’s free when you join my newsletter. <a class="quiet" href="https://www.melissagunn.com/">Sign up on my site</a></p>
+
+    <div class="dryads">
+      <div>
+        <h3>Woodside Dryads</h3>
+        <p>Part-dryad private investigator Ngaire is desperate for a job to pay the bills. Then a new client asks her to investigate a murder, and the murdered person turns out to be her ex. Same world as Sibyl’s books, with chainsaw-wielding orcs.</p>
+        <div class="buy">
+          <a class="btn" href="https://melissagunnauthor-shop.fourthwall.com/products/treescape"><span class="spark"><svg><use href="#spark"/></svg></span>Treescape</a>
+          <a class="btn" href="https://melissagunnauthor-shop.fourthwall.com/products/cityscape"><span class="spark"><svg><use href="#spark"/></svg></span>Cityscape</a>
+        </div>
+      </div>
+      <div class="pair">
+        <img src="img/treescape.jpg" alt="Treescape by Melissa Gunn" width="420" height="630" loading="lazy">
+        <img src="img/cityscape.jpg" alt="Cityscape by Melissa Gunn" width="420" height="630" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band weather" id="weather">
+  <div class="wrap grid">
+    <div>
+      <h2>Weather Gods</h2>
+      <p class="lead-in">Climate fiction meets YA urban fantasy. A near-future north of England, storms with attitude, demigods and shifters, and a girl trying to find her place while keeping her cat fed.</p>
+      <ol class="order">
+        <li><a href="https://www.books2read.com/Flash-Flood">Flash Flood</a> <span>the prequel novella, free with my newsletter</span></li>
+        <li><a href="https://books2read.com/StormSurge">Storm Surge</a> <span>the coast is crumbling</span></li>
+        <li><a href="https://books2read.com/ThunderSnow">Thunder Snow</a> <span>the underground rivers of Sheffield</span></li>
+        <li><a href="https://books2read.com/Heat-Wave">Heat Wave</a> <span>Freya tries pretending to be a mundane</span></li>
+      </ol>
+    </div>
+    <div class="row3">
+      <img src="img/storm-surge.jpg" alt="Storm Surge, Weather Gods book one" width="300" height="425" loading="lazy">
+      <img src="img/thunder-snow.jpg" alt="Thunder Snow, a Weather Gods novel" width="420" height="630" loading="lazy">
+      <img src="img/heat-wave.jpg" alt="Heat Wave, Weather Gods book three" width="420" height="630" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section class="band more" id="more">
+  <div class="wrap grid">
+    <div class="one">
+      <img src="img/halloween-hunt.jpg" alt="Halloween Hunt: Paw prints and lucky charms" width="420" height="630" loading="lazy">
+      <div>
+        <h3>Halloween Hunt</h3>
+        <p>Cleo’s witch is sometimes a little scatterbrained, so it’s just as well she has a cat to keep her in order. A standalone for middle grade to YA readers.</p>
+        <a class="quiet" href="https://books2read.com/HalloweenHunt">Find a copy</a>
+      </div>
+    </div>
+    <div class="one">
+      <img src="img/sing-for-the-sea.jpg" alt="Sing for the Sea, Little Wild Ocean Friends, a science and song book" width="420" height="543" loading="lazy">
+      <div>
+        <h3>Science and song</h3>
+        <p>Kids’ science, song and activity books with my sister, the songwriter Claudia Robin Gunn. She writes the songs, I bring the science, as Melissa R Gunn.</p>
+        <a class="quiet" href="https://books2read.com/SingForTheSea">Sing for the Sea</a> · <a class="quiet" href="https://books2read.com/SingForTheEarth">Sing for the Earth</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band lab" id="lab">
+  <div class="wrap grid">
+    <img src="img/melissa.jpg" alt="Melissa Gunn outdoors among trees" width="600" height="534" loading="lazy">
+    <div>
+      <h2>Science. Nature. Magic.</h2>
+      <p class="lead-in">I spent several years in science (my PhD is in conservation genetics) before deciding it would be fun to write fiction, too. It turns out there’s even more research involved in writing, which suits me.</p>
+      <p>I like combining facts that seem fantastical with actual fantasy, and I often ponder how mythical creatures would solve problems. I write from Ōtautahi, I narrate my own audiobooks, and I’ve started making my own covers.</p>
+      <ul class="notes">
+        <li><span class="spark"><svg><use href="#spark"/></svg></span><span>Grimoires &amp; Green Tea won the Sir Julius Vogel Award for Best Novella in 2026.</span></li>
+        <li><span class="spark"><svg><use href="#spark"/></svg></span><span>A finalist in Grist’s Imagine 2200 climate fiction contest, which got me seven minutes on RNZ.</span></li>
+        <li><span class="spark"><svg><use href="#spark"/></svg></span><span>Short stories about smashed avo after a volcanic eruption, and the first pav on Mars.</span></li>
+        <li><span class="spark"><svg><use href="#spark"/></svg></span><span>A collection of blurry wildlife photos to prove I love wildlife photography.</span></li>
+      </ul>
+      <div class="table">
+        <p>Find me at a con</p>
+        <p>This October I had a table at Armageddon in Auckland, with the Woodside books, Weather Gods and the rest. Next time, come and say hi.</p>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>A mockup made by Sparsh Saini for Melissa Gunn. Not affiliated, not live. The covers and words are the author’s.</p>
+    <p><a class="quiet" href="#">Back to top</a></p>
+  </div>
+</footer>
+
+<script>
+(() => {
+  const hero = document.querySelector('.hero'), stage = hero.querySelector('.stage');
+  const big = hero.querySelector('.big'), slot = hero.querySelector('.slot');
+  const sibyl = big.querySelector('.sibyl'), title = big.querySelector('.title'), seal = big.querySelector('.seal');
+  const open = hero.querySelector('.open'), low = hero.querySelector('.low'), copy = hero.querySelector('.copy');
+  // Where we start inside the cover: the open notebook and pencil in Sibyl's hands (fractions of the cover).
+  const F = { x: .72, y: .73 };
+  const clamp = v => Math.min(1, Math.max(0, v));
+  const ease = t => t * t * (3 - 2 * t);
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let L = null;
+  const measure = () => {
+    big.style.transform = 'none';
+    const s = stage.getBoundingClientRect(), r = slot.getBoundingClientRect();
+    const W = s.width, H = s.height, x = r.left - s.left, y = r.top - s.top, w = r.width, h = r.height;
+    big.style.width = w + 'px'; big.style.height = h + 'px';
+    const phone = W <= 760;
+    // Start: a window on the cover about this tall, filling the screen with no edge showing.
+    const k0 = Math.max(H / (h * (phone ? .5 : .44)), W / w * 1.02);
+    // Bottom of the window sits just above the author name, so the line never lands on it.
+    let sx = W / 2 - (phone ? .6 : F.x) * w * k0, sy = H - .86 * h * k0;
+    sx = Math.min(0, Math.max(W - w * k0, sx)); sy = Math.min(0, Math.max(H - h * k0, sy));
+    L = { top: hero.getBoundingClientRect().top + scrollY, run: hero.offsetHeight - innerHeight, x, y, w, h, k0, P0: [sx + F.x * w * k0, sy + F.y * h * k0], P1: [x + F.x * w, y + F.y * h] };
+  };
+  const render = p => {
+    const z = ease(clamp((p - .06) / .64));
+    const k = Math.exp(Math.log(L.k0) * (1 - z));
+    const px = L.P0[0] + (L.P1[0] - L.P0[0]) * z, py = L.P0[1] + (L.P1[1] - L.P0[1]) * z;
+    big.style.transform = `translate(${(px - F.x * L.w * k).toFixed(1)}px,${(py - F.y * L.h * k).toFixed(1)}px) scale(${k.toFixed(4)})`;
+    // Depth: Sibyl and the wolf sit closer than the shop, so they shrink back faster as we pull out.
+    sibyl.style.transform = `scale(${(1 + .18 * (1 - z)).toFixed(4)})`;
+    // The gold title drifts down out of the dark and settles into its place on the cover...
+    const t = ease(clamp((p - .2) / .4));
+    title.style.opacity = t.toFixed(3);
+    title.style.transform = `translateY(${(-(1 - t) * 70).toFixed(1)}%) scale(${(1.12 - .12 * t).toFixed(4)})`;
+    // ...and last, the Sir Julius Vogel seal is pressed on, a little overshoot like a real stamp.
+    const sp = clamp((p - .6) / .12), s = sp === 0 ? 0 : 1 + 2.2 * Math.pow(sp - 1, 3) + 1.2 * Math.pow(sp - 1, 2);
+    seal.style.opacity = ease(clamp(sp * 2.5)).toFixed(3);
+    seal.style.transform = `rotate(${(-16 * (1 - sp)).toFixed(2)}deg) scale(${(2.1 - 1.1 * s).toFixed(4)})`;
+    const o = ease(clamp((p - .04) / .18));
+    open.style.opacity = (1 - o).toFixed(3);
+    open.style.transform = `translateY(${(-o * 3).toFixed(2)}rem)`;
+    low.style.opacity = (1 - ease(clamp((p - .1) / .4))).toFixed(3);
+    const c = ease(clamp((p - .72) / .2));
+    copy.style.opacity = c.toFixed(3);
+    copy.style.transform = `translateY(${((1 - c) * 1.4).toFixed(2)}rem)`;
+  };
+  let last = 1;
+  const update = () => {
+    ticking = false;
+    if (reduced) { render(1); return; }
+    const p = L.run > 0 ? clamp((scrollY - L.top) / L.run) : 1;
+    last = p; render(p);
+  };
+  let ticking = false;
+  const relayout = () => { measure(); update(); };
+  if (reduced) document.documentElement.classList.add('still');
+  addEventListener('scroll', () => { if (!ticking && !reduced) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
+  addEventListener('resize', relayout);
+  document.fonts && document.fonts.ready.then(relayout);
+  relayout();
+})();
+</script>
+</body>
+</html>
