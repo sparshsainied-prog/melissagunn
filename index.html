@@ -55,9 +55,9 @@ p { margin: 0 0 1rem; }
 .made { margin: 0; padding: .45rem var(--gutter); background: #0a060c; color: var(--page-2); font-size: .98rem; line-height: 1.35; text-align: center; }
 .bar { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: .8rem var(--gutter); }
 .mark { font-family: var(--display); font-size: 1.35rem; font-weight: 700; text-decoration: none; color: var(--gold); }
-.bar nav { display: flex; gap: 1.4rem; font-size: 1.12rem; }
-.bar nav a { text-decoration: none; }
-.bar nav a:hover, .bar nav a:focus-visible { color: var(--gold); }
+.shelfnav { display: flex; flex-wrap: wrap; gap: .4rem 1.4rem; margin-top: 1.6rem; padding-top: 1rem; border-top: 1px solid rgba(226, 194, 125, .35); font-size: 1.08rem; }
+.shelfnav a { text-decoration: none; color: var(--page-2); }
+.shelfnav a:hover, .shelfnav a:focus-visible { color: var(--gold); }
 
 /* Hero: we start inside the cover, on the grumpy grimoire in Sibyl's hands, and scrolling
    pulls back until the whole book is sitting on the page. One image, transform only. */
@@ -156,8 +156,7 @@ footer p { margin: 0; }
 
 @media (max-width: 760px) {
   body { font-size: 1.14rem; }
-  .bar nav { gap: 1rem; font-size: 1.05rem; }
-  .bar nav .wide { display: none; }
+  .shelfnav { justify-content: center; margin-top: 1rem; padding-top: .7rem; font-size: 1rem; gap: .3rem 1rem; }
   .open { bottom: 7svh; }
   .inside { inset: 6.8rem 1.2rem 1.6rem; grid-template-columns: minmax(0, 1fr); grid-template-rows: auto auto; justify-items: center; align-content: center; gap: 1.3rem; text-align: center; }
   .slot { height: min(40svh, 21rem); }
@@ -184,11 +183,6 @@ footer p { margin: 0; }
   <p class="made">A homepage idea made by Sparsh Saini for Melissa Gunn. Not their official site.</p>
   <div class="bar">
     <a class="mark" href="#">Melissa Gunn</a>
-    <nav aria-label="Main">
-      <a href="#woodside">Woodside</a>
-      <a class="wide" href="#weather">Weather Gods</a>
-      <a href="#lab">About</a>
-    </nav>
   </div>
 </div>
 
@@ -205,6 +199,11 @@ footer p { margin: 0; }
           <a class="btn" href="https://books2read.com/GrimoiresAndGreenTea"><span class="spark"><svg><use href="#spark"/></svg></span>Find a copy</a>
           <a class="quiet" href="https://melissagunnauthor-shop.fourthwall.com/products/grimoires-and-green-tea-audiobook">Hear me read it</a>
         </div>
+        <nav class="shelfnav" aria-label="Main">
+          <a href="#woodside">The Woodside shelf</a>
+          <a href="#weather">Weather Gods</a>
+          <a href="#lab">About me</a>
+        </nav>
       </div>
     </div>
     <div class="big" role="img" aria-label="Grimoires and Green Tea cover: Sibyl in a bookshop with a notebook and pencil, a grey wolf beside her, purple smoke, and the Sir Julius Vogel Award winner seal">
